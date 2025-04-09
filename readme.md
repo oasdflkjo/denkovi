@@ -1,7 +1,7 @@
 # Denkovi Relay Protocol — Reverse Engineered
 
 A minimal Python library for controlling Denkovi USB relay boards via raw binary protocol.  
-Designed for simplicity, clarity, and direct control.
+Designed for simplicity, clarity, and direct control. _Written by Claude 3.7_
 
 ---
 
@@ -34,9 +34,7 @@ Versions used while developping:
 Python    3.12.9
 pyserial  3.5
 ```
-```bash
-pip install pyserial
-```
+
 
 ---
 
@@ -50,14 +48,9 @@ relay = DenkoviRelay('COM8')
 try:
     relay.connect()
 
-    # Turn on all relays
-    relay.set_pattern(0xFF)
-
-    # Turn on every other relay
-    relay.set_pattern(0xAA)
-
     # Set relays using a binary string
     relay.set_pattern('10101010')
+
 finally:
     relay.disconnect()
 ```
@@ -70,13 +63,9 @@ Note: Attempting to set a pattern without connecting will raise a RuntimeError.
 
 ```bash
 # Syntax: python denkovi_relay.py <port> <pattern>
-# Pattern can be binary string or hex (e.g., 0xFF)
 
 # Turn on all relays
 python denkovi_relay.py COM8 11111111
-
-# Alternate pattern
-python denkovi_relay.py COM8 0xAA
 
 # Error message if incorrect arguments:
 # Usage: python denkovi_relay.py <port> <pattern>
@@ -88,8 +77,7 @@ python denkovi_relay.py COM8 0xAA
 
 ## Contributing
 
-If you discover improvements or board variants, contributions are welcome.  
-Please submit a pull request or open an issue.
+If you discover improvements or board variants, PRs are welcome.
 
 ---
 
