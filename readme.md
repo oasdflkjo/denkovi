@@ -77,8 +77,7 @@ python denkovi_relay.py COM8 11111111
 
 ## Contributing
 
-If you discover improvements or board variants, contributions are welcome.  
-Please submit a pull request or open an issue.
+If you discover improvements or board variants, PRs are welcome.
 
 ---
 
