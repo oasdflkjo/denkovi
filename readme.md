@@ -24,10 +24,6 @@ The communication is straightforward: each bit in the data byte corresponds to a
 # 8-relay board: one byte
 0b00000001  # Relay 0 ON
 0b00000101  # Relays 0 and 2 ON
-
-# 16-relay board: two bytes (little endian format)
-0b00000001_00000000  # Relay 0 ON
-0b00000000_00000001  # Relay 8 ON
 ```
 
 ---
