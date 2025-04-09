@@ -37,15 +37,24 @@ class DenkoviRelay:
         # Remove any spaces or separators
         pattern = pattern.replace(" ", "").replace("_", "")
 
+        # Validate pattern length
+        if len(pattern) not in [8, 16]:
+            raise ValueError("Pattern must be 8 or 16 bits long")
+
         # Convert binary string to integer
         value = int(pattern, 2)
 
         # Send the command
-        if len(pattern) <= 8:
+        if len(pattern) == 8:
+            # Single byte for 8 relays
             self.ser.write(bytes([value]))
         else:
-            # For 16 relays, send two bytes
-            self.ser.write(bytes([value & 0xFF, (value >> 8) & 0xFF]))
+            # Two bytes for 16 relays                        This is untested so prolly wrong!!!!!!
+            # Split into two 8-bit values
+            low_byte = value & 0xFF  # First 8 bits
+            high_byte = (value >> 8) & 0xFF  # Last 8 bits
+            self.ser.write(bytes([low_byte, high_byte]))
+
         time.sleep(0.1)
 
 
