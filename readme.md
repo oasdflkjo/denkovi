@@ -19,7 +19,6 @@ The communication is straightforward: each bit in the data byte corresponds to a
 ## Protocol
 
 ```python
-# 8-relay board: one byte
 0b00000001  # Relay 0 ON
 0b00000101  # Relays 0 and 2 ON
 ```
