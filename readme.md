@@ -50,14 +50,9 @@ relay = DenkoviRelay('COM8')
 try:
     relay.connect()
 
-    # Turn on all relays
-    relay.set_pattern(0xFF)
-
-    # Turn on every other relay
-    relay.set_pattern(0xAA)
-
     # Set relays using a binary string
     relay.set_pattern('10101010')
+
 finally:
     relay.disconnect()
 ```
