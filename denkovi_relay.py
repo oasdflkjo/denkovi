@@ -25,26 +25,23 @@ class DenkoviRelay:
             self.ser = None
 
     def set_pattern(self, pattern):
-        """Set relay pattern from a binary string or integer.
+        """Set relay pattern from a binary string.
 
         Args:
-            pattern (str or int): Binary pattern like '10101010' or integer like 0xAA
-                                 For 16 relays, use '1010101010101010' or 0xAAAA
+            pattern (str): Binary pattern like '10101010' for 8 relays
+                          or '1010101010101010' for 16 relays
         """
         if not self.ser:
             raise RuntimeError("Not connected. Call connect() first.")
 
-        # Convert pattern to integer if it's a string
-        if isinstance(pattern, str):
-            # Remove any spaces or separators
-            pattern = pattern.replace(" ", "").replace("_", "")
-            # Convert binary string to integer
-            value = int(pattern, 2)
-        else:
-            value = pattern
+        # Remove any spaces or separators
+        pattern = pattern.replace(" ", "").replace("_", "")
+
+        # Convert binary string to integer
+        value = int(pattern, 2)
 
         # Send the command
-        if value <= 0xFF:
+        if len(pattern) <= 8:
             self.ser.write(bytes([value]))
         else:
             # For 16 relays, send two bytes
