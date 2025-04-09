@@ -27,8 +27,13 @@ The communication is straightforward: each bit in the data byte corresponds to a
 ## Installation
 
 Clone this repository or copy `denkovi_relay.py` into your project directory.  
-Python 3.6+ and `pyserial` are required.
 
+Compatibility with different python/pyserial version is not tested.
+```
+Versions used while developping:
+Python    3.12.9
+pyserial  3.5
+```
 ```bash
 pip install pyserial
 ```
