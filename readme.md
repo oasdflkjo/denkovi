@@ -65,7 +65,6 @@ Note: Attempting to set a pattern without connecting will raise a RuntimeError.
 
 ```bash
 # Syntax: python denkovi_relay.py <port> <pattern>
-# Pattern can be binary string or hex (e.g., 0xFF)
 
 # Turn on all relays
 python denkovi_relay.py COM8 11111111
