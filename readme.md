@@ -34,9 +34,7 @@ Versions used while developping:
 Python    3.12.9
 pyserial  3.5
 ```
-```bash
-pip install pyserial
-```
+
 
 ---
 
