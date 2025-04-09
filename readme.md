@@ -1,7 +1,7 @@
 # Denkovi Relay Protocol — Reverse Engineered
 
 A minimal Python library for controlling Denkovi USB relay boards via raw binary protocol.  
-Designed for simplicity, clarity, and direct control.
+Designed for simplicity, clarity, and direct control. Written by Claude 3.7.
 
 ---
 
