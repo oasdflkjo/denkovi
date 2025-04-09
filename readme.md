@@ -70,9 +70,6 @@ Note: Attempting to set a pattern without connecting will raise a RuntimeError.
 # Turn on all relays
 python denkovi_relay.py COM8 11111111
 
-# Alternate pattern
-python denkovi_relay.py COM8 0xAA
-
 # Error message if incorrect arguments:
 # Usage: python denkovi_relay.py <port> <pattern>
 # Example (8 relays): python denkovi_relay.py COM8 10101010
