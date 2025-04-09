@@ -13,8 +13,6 @@ The communication is straightforward: each bit in the data byte corresponds to a
 - **1** = Relay ON  
 - **0** = Relay OFF  
 - Each byte controls up to 8 relays  
-- 16-relay boards use two bytes in little-endian format
-- Serial connection uses 1-second timeout
 
 ---
 
