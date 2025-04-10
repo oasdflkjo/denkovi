@@ -17,6 +17,9 @@ class DenkoviRelay:
     def connect(self):
         """Connect to the relay controller."""
         self.ser = serial.Serial(self.port, self.baud_rate, timeout=1)
+        # Send wake-up command
+        self.ser.write(b"ask//")
+        time.sleep(0.1)  # Give the board time to process the command
 
     def disconnect(self):
         """Disconnect from the relay controller."""

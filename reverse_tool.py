@@ -21,6 +21,8 @@ def test_relays(port_name, baud_rate=9600):
         ser = serial.Serial(port_name, baud_rate, timeout=1)
         print(f"Testing {port_name} at {baud_rate} baud")
 
+        send_command(ser, b"ask//")
+
         # Test each relay (bit 0-7)
         for relay in range(8):
             print(f"\nRelay {relay} ON")
