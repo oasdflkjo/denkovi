@@ -1,18 +1,10 @@
 # Denkovi Relay Controller
 
+_by Claude 3.7_
+
 A Python library for controlling Denkovi USB relay boards using two different approaches:
 1. **Direct FTDI control** (8-relay boards) - Bypasses serial communication because init signal can't be sent trough com port :D
 2. **Serial protocol** (16-relay boards) - Uses the official protocol as per the Denkovi manual
-
-
-
-## Board Support
-
-| Board Type | File to Use | Method | Notes |
-|------------|-------------|--------|-------|
-| 8-relay | `denkovi_8_relay.py` | Direct FTDI | Most reliable, no serial issues |
-| 16-relay | `denkovi_16_relay.py` | Serial | Follows the official Denkovi protocol |
-
 
 
 ## Overview
